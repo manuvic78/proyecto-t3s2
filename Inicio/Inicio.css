@@ -1,0 +1,369 @@
+/* Google Font Import - letras */
+@import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;500;600;700&display=swap');
+
+*{
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* Colores del Dashboard - Modo Claro */
+    --body-color: #e4e9f7;
+    --dashboard-color:#fff;
+    --primary-color: #bb8cfc;;
+    --primary-color-light:#f9f5ff;
+    --toggle-color:#DDD;
+    --text-color:#242526;
+    --color-fondo: #CCC;
+
+    /* Colores del NavBar - Modo Claro */
+    --color-primario: #fff;
+    --color-Decorativo:#bb8cfc;
+    --color-letras: #242526;
+    --color-contenedor:#ddd;
+    --color-borde-contenedor:#242526;
+
+    /* Transiciones */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+body{
+    height: 100vh;
+    transition: var(--tran-05);
+    background-color: var(--color-fondo);
+    background-size: cover;
+}
+
+/* Colores del Dashboard - Modo Oscuro */
+body.dark{
+    --body-color: #18191a;
+    --dashboard-color:#242526;
+    --primary-color: #bb8cfc;;
+    --primary-color-light:#3a3b3c;
+    --toggle-color:#FFF;
+    --text-color:#CCC;
+    --color-fondo: #18191a;
+
+    /* Colores del NavBar - Modo Oscuro */
+    --color-primario: #242526;
+    --color-decorativo:#bb8cfc;
+    --color-letras: #CCC;
+    --color-contenedor: #18191a;
+    --color-borde-contenedor: #bb8cfc;
+}
+
+.contenedor-grid{
+    display: grid;
+    grid-template-columns: 260px 1fr;
+}
+.contenedor-grid-alternative{
+    display: grid;
+    grid-template-columns: 90px 1fr;
+}
+
+/* DASHBOARD */
+.dashboard-grid{
+    grid-column: 1/2;
+}
+.nav-grid{
+    grid-column: 2/3;
+}
+.dashboard{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--dashboard-color);
+    transition: var(--tran-05);
+    z-index: 101; /* Asegura que esté encima del nav */
+}
+
+.dashboard.close{
+    width: 88px;
+}
+
+/* RECURSOS CSS DE LA DASHBOARD */
+
+.dashboard .text{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-letras);
+    transition: var(--tran-03);
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.dashboard.close .text{
+    opacity: 0;
+}
+
+.dashboard .image{
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard li{
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard li .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    font-size: 20px;
+}
+
+.dashboard li .icon,
+.dashboard li .text{
+    color: var(--text-color);
+    transition: var(--tran-02);
+}
+
+.dashboard header{
+    position: relative;
+}
+
+.dashboard .image-text img{
+    width: 50px;
+    border-radius: 6px;
+}
+
+.dashboard header .image-text{
+    display: flex;
+    align-items: center;
+}
+
+header .image-text .header-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.header-text .name{
+    font-weight: 600;
+}
+
+.header-text .profession{
+    margin-top: -2px;
+}
+
+.dashboard header .toggle{
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%);
+    height: 25px;
+    width: 25px;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.dashboard .buscador{
+    background-color: var(--primary-color-light);
+}
+
+.buscador input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    background: var(--primary-color-light);
+}
+
+.dashboard li a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: var(--tran-04);
+}
+
+.dashboard li a:hover{
+    background: var(--primary-color);
+}
+
+.dashboard li a:hover .icon,
+.dashboard li a:hover .text{
+    color: var(--dashboard-color);
+}
+
+.dashboard .menu-pixe{
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-pixe .mode{
+    background: var(--primary-color-light);
+    position: relative;
+    border-radius: 6px;
+}
+
+.menu-pixe .mode .modo-oscuro{
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-pixe .mode i{
+    position: absolute;
+}
+
+.menu-pixe .mode i.sun{
+    opacity: 0;
+}
+
+.menu-pixe .mode .toggle-switch{
+    position: absolute;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 60px;
+    cursor: pointer;
+    background: var(--primary-color-light);
+}
+
+.toggle-switch .switch{
+    position:relative;
+    height: 22px;
+    width: 44px;
+    border-radius: 25px;
+    background: var(--toggle-color);
+}
+
+.switch::before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background:var(--dashboard-color);
+    transition: var(--tran-03);
+}
+
+body.dark .switch::before{
+    left: 25px;
+}
+
+/*          El   NavBarrrrrrrrrrrrrrrrrrrr */
+
+.nav {
+    background-color: var(--color-primario);
+    position: fixed;
+    top: 0;
+    left: 250px; /* Ancho inicial del dashboard abierto */
+    width: calc(100% - 250px); /* Ancho inicial del nav */
+    z-index: 100; /* Asegura que esté por debajo del dashboard */
+}
+
+.nav__list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 15%;
+}
+
+/* OPCIONES DEL NAVBAR */
+.nav__listitem {
+    list-style: none;
+    font-weight: bold;
+    position: relative;
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+}
+
+.nav__listitem::after {
+    content: "";
+    width: 0;
+    height: .3rem;
+    border-radius: 0.2rem;
+    position: absolute;
+    left: 1rem;
+    bottom: .8rem;
+    background-color: var(--color-Decorativo);
+    transition: width 200ms ease-in-out;
+}
+
+.nav__listitem:hover::after, .nav__listitem:focus::after {
+    width: 70%;
+}
+
+.nav__listitem:hover ul,
+.nav__listitem:focus ul {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* OPCIONES DE LAS OPCIONES DEL NAAAAAV BA*/
+.nav__listitemdrop {
+    position: absolute;
+    top: 4rem;
+    left: -1rem;
+    box-shadow: 0 0 5px var(--color-borde-contenedor);
+    background-color: var(--color-contenedor);
+    border-radius: 0.2rem;
+    width: 12rem;
+    padding: .75rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.nav__listitemdrop li {
+    list-style: none;
+    padding: .5rem 1rem;
+    border-radius: 0.2rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.nav__listitemdrop li:hover, .nav__listitemdrop li:focus {
+    background-color: var(--color-Decorativo);
+}
+
+/* LETRITAS */
+.nav a {
+    color: var(--color-letras);
+    text-decoration: none;
+}
+
+/* Estilos para la clase visually-hidden (para accesibilidad del buscador) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* Evita que el texto se rompa */
+    border: 0;
+}
